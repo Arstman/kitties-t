@@ -3,7 +3,7 @@ use frame_support::{assert_noop, assert_ok};
 use sp_runtime::traits::BadOrigin;
 
 #[test]
-fn create_kitty_successful() {
+fn create_kitty_works() {
 	new_test_ext().execute_with(|| {
 		let account_id = 1;
 		let kitty_id = 0;
@@ -45,7 +45,7 @@ fn create_kitty_failed_when_next_kitty_id_overflow() {
 
 
 #[test]
-fn breed_kitty_successful() {
+fn breed_kitty_works() {
 	new_test_ext().execute_with(|| {
 		let creator = 1;
 		let kitty_id_1 = 0;
@@ -111,7 +111,7 @@ fn breed_kitty_failed_when_parents_using_the_same_kitty_id() {
 }
 
 #[test]
-fn transfer_kitty_successful() {
+fn transfer_kitty_works() {
 	new_test_ext().execute_with(|| {
 		let account_1 = 1;
 		let account_2 = 2;
